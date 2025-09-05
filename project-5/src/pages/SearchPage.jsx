@@ -1,4 +1,3 @@
-// src/pages/SearchPage.jsx
 import React, { useState } from 'react';
 import { Form, FormControl, Button, Row, Col, Alert, Spinner } from 'react-bootstrap';
 import { searchMovies } from '../services/api';
@@ -31,7 +30,7 @@ const SearchPage = () => {
   return (
     <div>
       <h1 className="text-center mb-4">Busca de Filmes</h1>
-
+      
       <Form onSubmit={handleSearch} className="d-flex mb-4">
         <FormControl
           type="search"
@@ -50,7 +49,7 @@ const SearchPage = () => {
           <p className="mt-2">Carregando...</p>
         </div>
       )}
-
+      
       {error && <Alert variant="danger">{error}</Alert>}
 
       {movies.length > 0 && (
@@ -62,7 +61,7 @@ const SearchPage = () => {
           ))}
         </Row>
       )}
-
+      
       {movies.length === 0 && !loading && !error && query && (
         <Alert variant="info" className="text-center">Nenhum filme encontrado para a sua busca.</Alert>
       )}
