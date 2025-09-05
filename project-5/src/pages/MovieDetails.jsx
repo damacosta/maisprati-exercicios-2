@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Container, Row, Col, Image, Spinner, Alert, ListGroup } from 'react-bootstrap';
+import { Container, Row, Col, Image, Spinner, Alert, ListGroup, Button } from 'react-bootstrap';
 import { getMovieDetails } from '../services/api';
+import useFavorites from '../hooks/useFavorites';
 
-const MovieDetails = () => {
+const MovieDetailsPage = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { isFavorite, addFavorite, removeFavorite } = useFavorites();
 
   useEffect(() => {
     const fetchMovie = async () => {
@@ -44,6 +46,14 @@ const MovieDetails = () => {
   const posterUrl = movie.poster_path
     ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
     : 'https://via.placeholder.com/500x750?text=Sem+Imagem';
+  
+  const handleFavoriteClick = () => {
+    if (isFavorite(movie)) {
+      removeFavorite(movie);
+    } else {
+      addFavorite(movie);
+    }
+  };
 
   return (
     <Container className="my-5">
@@ -72,10 +82,18 @@ const MovieDetails = () => {
               <strong>Avaliação (TMDB):</strong> {movie.vote_average.toFixed(1)}/10 ({movie.vote_count} votos)
             </ListGroup.Item>
           </ListGroup>
+          <div className="mt-4">
+            <Button
+              variant={isFavorite(movie) ? 'danger' : 'success'}
+              onClick={handleFavoriteClick}
+            >
+              {isFavorite(movie) ? 'Remover dos Favoritos' : 'Adicionar aos Favoritos'}
+            </Button>
+          </div>
         </Col>
       </Row>
     </Container>
   );
 };
 
-export default MovieDetails;
+export default MovieDetailsPage;
