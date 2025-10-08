@@ -1,12 +1,24 @@
-export default function ProductCard({ produto, onAdd, disabled }) {
+import Button from "./Button";
+import Skeleton from "./Skeleton";
+
+export default function ProductCard({ produto, loading, onAdd, disabled }) {
   return (
     <div className="product-card">
-      <img src={produto.imagem} alt={produto.titulo} className="product-card__img" />
-      <h3 className="product-card__title">{produto.titulo}</h3>
-      <div className="product-card__price">R$ {produto.preco.toFixed(2)}</div>
-      <button className="btn btn--solid" onClick={onAdd} disabled={disabled}>
-        Adicionar
-      </button>
+      {loading ? (
+        <>
+          <Skeleton width="100%" height="120px" />
+          <Skeleton width="60%" height="2em" />
+          <Skeleton width="40%" height="1.5em" />
+          <Skeleton width="80px" height="2em" />
+        </>
+      ) : (
+        <>
+          <img src={produto.imagem} alt={produto.titulo} className="product-card__img" />
+          <h3 className="product-card__title">{produto.titulo}</h3>
+          <div className="product-card__price">R$ {produto.preco.toFixed(2)}</div>
+          <Button onClick={onAdd} disabled={disabled}>Adicionar</Button>
+        </>
+      )}
     </div>
   );
 }
