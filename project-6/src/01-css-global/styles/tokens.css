@@ -1,10 +1,14 @@
 :root {
+  --color-bg: #f8f8f8;
+  --color-surface: #fff;
   --color-primary: #007AFF;
-  --color-secondary: #005BBB;
-  --color-bg: #F8F8F8;
+  --color-primary-dark: #005BBB;
   --color-text: #222;
-  --color-success: #4BB543;
-  --color-danger: #FF3B30;
+  --color-text-inverse: #fff;
+  --color-border: #e2e2e2;
+  --color-rating: #ffb400;
+  --color-tag-novo: #4BB543;
+  --color-tag-promo: #FF8C00;
 
   --radius-sm: 4px;
   --radius-md: 8px;
@@ -14,7 +18,13 @@
   --space-md: 16px;
   --space-lg: 32px;
 
-  --font-size-sm: 0.875rem;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.12);
+
+  --font-size-sm: 0.9rem;
   --font-size-md: 1rem;
   --font-size-lg: 1.25rem;
+
+  --transition: 200ms cubic-bezier(.4,0,.2,1);
+
 }
