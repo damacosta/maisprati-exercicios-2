@@ -9,55 +9,73 @@ const produtos = [
         id: 1,
         titulo: "Chaveiro Meiko",
         preco: 29.90,
+        rating: 4.0,
+        tag: "Novo",
         imagem: "/images/chaveiro-meiko.png"
     },
     {
         id: 2,
         titulo: "Hatsune Miku Chibi",
         preco: 80.00,
+        rating: 4.3,
+        tag: "Novo",
         imagem: "/images/hatsune-miku-chibi.png"
     },
     {
         id: 3,
         titulo: "Hatsune Miku Action Figure",
         preco: 280.00,
+        rating: 4.8,
+        tag: "Novo",
         imagem: "/images/hatsune-miku-figure.png"
     },
     {
         id: 4,
         titulo: "Kagamine Rin & Len Action Figure",
-        preco: 370.00,
+        preco: 360.00,
+        rating: 5.0,
+        tag: "Promo",
         imagem: "/images/kagamine-rin-len-figure.png"
     },
     {
         id: 5,
         titulo: "Kaito Action Figure",
-        preco: 250.00,
+        preco: 280.00,
+        rating: 4.8,
+        tag: "Novo",
         imagem: "/images/kaito-figure.png"
     }
     ,
     {
         id: 6,
         titulo: "Kagamine Rin Action Figure",
-        preco: 280.00,
+        preco: 149.90,
+        rating: 4.8,
+        tag: "Promo",
         imagem: "/images/kagamine-rin.png"
     },
     {
         id: 7,
         titulo: "Megurine Luka Action Figure",
-        preco: 280.00,
+        preco: 285.00,
+        rating: 4.9,
+        tag: "Novo",
         imagem: "/images/megurine-luka-figure.png"
     },
     {
         id: 8,
         titulo: "Meiko Action Figure",
-        preco: 280.00,
+        preco: 189.90,
+        rating: 4.6,
+        tag: "Promo",
         imagem: "/images/meiko-figure.png"
     },
     {
         id: 9,
         titulo: "Megurine Luka Pelúcia",
-        preco: 90.00,
+        preco: 74.90,
+        rating: 4.3,
+        tag: "Promo",
         imagem: "/images/pelucia-megurine-luka.png"
     }
 ];
