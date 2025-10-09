@@ -45,7 +45,8 @@ a {
   font-weight: 500;
 }
 
-.btn:focus {
+.btn:focus,
+.btn:focus-visible {
   box-shadow: 0 0 0 3px rgba(0,122,255,0.25);
 }
 
@@ -83,11 +84,19 @@ a {
 .btn--ghost:focus-visible {
   background: rgba(0,122,255,0.08);
 }
+
+.btn:hover:not(:disabled),
+.btn:focus-visible:not(:disabled) {
+  filter: brightness(0.95);
+  box-shadow: 0 2px 12px rgba(0,122,255,0.10);
+}
+
 .btn:disabled {
   background: #eee;
   color: #aaa;
   border-color: #ccc;
   cursor: not-allowed;
+  box-shadow: none;
 }
 
 .skeleton {
@@ -110,6 +119,7 @@ a {
   background: var(--color-surface, #fff);
   border-radius: var(--radius-md, 10px);
   box-shadow: var(--shadow-sm, 0 2px 8px rgba(0,0,0,0.06));
+  transition: box-shadow 0.2s, transform 0.2s;
   padding: var(--space-md, 16px);
   display: flex;
   flex-direction: column;
@@ -165,6 +175,12 @@ a {
 .product-card__tag--promo {
   background: var(--color-tag-promo, #FF8C00);
   color: #fff;
+}
+
+.product-card:hover,
+.product-card:focus-within {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  transform: translateY(-2px) scale(1.01);
 }
 
 .product-list {
