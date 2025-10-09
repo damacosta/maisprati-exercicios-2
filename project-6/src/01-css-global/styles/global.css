@@ -13,6 +13,7 @@ body {
   background: var(--color-bg, #F8F8F8);
   color: var(--color-text, #222);
   min-height: 100vh;
+  transition: background 0.3s, color 0.3s, box-shadow 0.2s;
 }
 
 h1, h2, h3 {
@@ -44,6 +45,7 @@ a {
   padding: var(--space-sm, 8px) var(--space-md, 16px);
   z-index: 10;
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: background 0.3s, color 0.3s, box-shadow 0.2s;
 }
 
 .navbar__theme-toggle {
@@ -102,6 +104,13 @@ a {
 .btn:focus-visible {
   box-shadow: 0 0 0 3px rgba(0,122,255,0.25);
 }
+
+.navbar__theme-toggle:focus-visible, .btn:focus-visible {
+  outline: 2px solid var(--color-primary, #007AFF);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(0,122,255,0.15);
+}
+
 
 .btn--solid {
   background: var(--color-primary, #007AFF);
@@ -172,7 +181,7 @@ a {
   background: var(--color-surface, #fff);
   border-radius: var(--radius-md, 10px);
   box-shadow: var(--shadow-sm, 0 2px 8px rgba(0,0,0,0.06));
-  transition: box-shadow 0.2s, transform 0.2s;
+  transition: box-shadow 0.2s, transform 0.2s, background 0.3s, color 0.3s;
   padding: var(--space-md, 16px);
   display: flex;
   flex-direction: column;
@@ -260,5 +269,7 @@ a {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+
 
 
