@@ -1,8 +1,8 @@
-export default function Navbar({ cartCount = 0 }) {
+export default function Navbar({ cartCount = 0, onToggleTheme }) {
   return (
     <header className="navbar">
       <span className="navbar__logo">Minha lojinha Vocaloid</span>
-      <button className="navbar__theme-toggle" aria-label="Alternar tema">
+      <button className="navbar__theme-toggle" aria-label="Alternar tema" onClick={onToggleTheme}>
         <img src="/icons/modo-escuro.png" alt="Alternar para modo escuro" width={24} height={24} />
       </button>
       <span className="navbar__cart-badge" aria-label="Itens no carrinho">

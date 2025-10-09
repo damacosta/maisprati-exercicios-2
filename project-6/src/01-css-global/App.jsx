@@ -87,9 +87,18 @@ export default function CssGlobalApp() {
         setTimeout(() => setLoading(false), 1500);
     }, []);
 
+    const [dark, setDark] = React.useState(() => {
+        return localStorage.getItem("theme") === "dark";
+    });
+
+    React.useEffect(() => {
+        document.body.classList.toggle("theme-dark", dark);
+        localStorage.setItem("theme", dark ? "dark" : "light");
+    }, [dark]);
+
     return (
         <>
-            <Navbar />
+            <Navbar onToggleTheme={() => setDark(d => !d)} />
             <h2>Minha lojinha Vocaloid</h2>
             <div className="product-list">
                 {loading
