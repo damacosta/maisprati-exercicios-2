@@ -31,7 +31,7 @@ export default function ProductCard({ produto, loading, onAdd, disabled }) {
                     <h3 className="product-card__title">{produto.titulo}</h3>
                     <div className="product-card__price">R$ {produto.preco.toFixed(2)}</div>
                     <div className="product-card__rating">★ {produto.rating}</div>
-                    <Button onClick={onAdd} disabled={disabled}>Adicionar</Button>
+                    <Button onClick={onAdd} disabled={disabled} variant="outline">Adicionar</Button>
                 </>
             )}
         </div>
