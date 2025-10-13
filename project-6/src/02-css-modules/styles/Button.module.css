@@ -7,8 +7,70 @@
   border-radius: var(--radius-md);
   border: none;
   cursor: pointer;
+  transition: background var(--transition), color var(--transition), box-shadow var(--transition);
+  box-shadow: var(--shadow-sm);
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button:focus-visible {
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.solid {
   background: var(--color-primary);
   color: var(--color-text-inverse);
-  transition: background var(--transition), color var(--transition);
-  outline: none;
+}
+
+.outline {
+  background: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] .button.solid {
+  background: var(--color-primary-dark);
+  color: var(--color-text-inverse);
+}
+[data-theme="dark"] .button.outline {
+  background: transparent;
+  border: 2px solid var(--color-primary-dark);
+  color: var(--color-text-inverse);
+}
+[data-theme="dark"] .button.ghost {
+  background: transparent;
+  color: var(--color-text-inverse);
+}
+
+.loading {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #e2e2e2 25%, #f8f8f8 50%, #e2e2e2 75%);
+  background-size: 200% 100%;
+  animation: loadingBtn 1.5s infinite linear;
+  border-radius: var(--radius-md);
+  width: 100px;
+  height: 2.4em;
+}
+
+@keyframes loadingBtn {
+  to {
+    background-position: -200% 0;
+  }
 }
