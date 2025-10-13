@@ -1,0 +1,54 @@
+@import '../tokens.module.css';
+
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-md);
+  outline: none;
+}
+
+.img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  margin-bottom: var(--space-sm);
+}
+
+.tag {
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  color: white;
+  display: inline-block;
+  margin-bottom: var(--space-xs);
+}
+
+.tagNovo {
+  background-color: var(--color-tag-novo);
+}
+
+.tagPromo {
+  background-color: var(--color-tag-promo);
+}
+
+.title {
+  font-weight: 600;
+  font-size: var(--font-size-md);
+  margin-bottom: var(--space-xs);
+}
+
+.price {
+  font-weight: bold;
+  font-size: var(--font-size-md);
+  margin-bottom: var(--space-xs);
+}
+
+.rating {
+  color: var(--color-rating);
+  margin-bottom: var(--space-sm);
+}
