@@ -1,0 +1,14 @@
+@import '../tokens.module.css';
+
+.skeleton {
+  background: linear-gradient(90deg, #e2e2e2 25%, #f8f8f8 50%, #e2e2e2 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite linear;
+  border-radius: var(--radius-sm);
+}
+
+@keyframes loading {
+  to {
+    background-position: -200% 0;
+  }
+}

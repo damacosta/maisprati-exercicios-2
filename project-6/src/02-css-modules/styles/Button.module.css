@@ -9,7 +9,6 @@
   cursor: pointer;
   background: var(--color-primary);
   color: var(--color-text-inverse);
-
   transition: background var(--transition), color var(--transition);
   outline: none;
 }
