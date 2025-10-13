@@ -1,0 +1,36 @@
+@import '../tokens.module.css';
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md);
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: var(--shadow-md);
+  z-index: 10;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: var(--font-size-lg);
+}
+
+.themeToggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.cartBadge {
+  display: flex;
+  align-items: center;
+}
+
+.cartCount {
+  margin-left: var(--space-xs);
+  font-weight: 600;
+}
