@@ -1,155 +1,165 @@
-Projeto Java – Fundamentos de POO e Padrões de Projeto
+# Projeto Java – Fundamentos de POO e Padrões de Projeto
 
-Este projeto reúne implementações práticas de conceitos fundamentais de Programação Orientada a Objetos (POO), encapsulamento, herança, polimorfismo, abstração, imutabilidade, generics e padrões de projeto, desenvolvidos em Java. Cada exercício simula cenários do mundo real, como gerenciamento de produtos, funcionários, transporte, pagamentos e carrinhos de compras.
+Este projeto reúne implementações práticas dos conceitos fundamentais de **Programação Orientada a Objetos (POO)** e padrões de projeto em Java. Cada exercício simula cenários do mundo real, como gerenciamento de produtos, funcionários, meios de transporte, pagamentos e carrinhos de compras, abordando temas como encapsulamento, herança, polimorfismo, abstração, imutabilidade, generics e padrão Strategy.
 
-🔹 Objetivos do Projeto
+---
 
-Praticar encapsulamento e validação de dados com getters e setters.
+## 🔹 Objetivos do Projeto
 
-Aplicar regras de negócio, como limites de desconto e validações de pagamento.
+- Praticar encapsulamento e validação de dados com getters e setters.
+- Aplicar regras de negócio, como limites de desconto e validações de pagamento.
+- Implementar hierarquias de classes usando herança e sobrescrita de métodos.
+- Demonstrar polimorfismo com interfaces e estratégias de execução dinâmica.
+- Criar objetos imutáveis e objetos de valor consistentes.
+- Utilizar generics e repositórios genéricos em memória.
+- Aplicar o padrão Strategy para cálculo de frete flexível.
 
-Implementar hierarquias de classes usando herança e sobrescrita de métodos.
+---
 
-Demonstrar polimorfismo com interfaces e estratégias de execução dinâmica.
+## 🔹 Tecnologias
 
-Criar objetos imutáveis e objetos de valor consistentes.
+- **Java 17 (ou superior)**
+- **Maven/Gradle** (opcional para gerenciamento de dependências)
+- **IDE Recomendada:** IntelliJ IDEA ou Eclipse
 
-Utilizar generics e repositórios genéricos em memória.
+---
 
-Aplicar o padrão Strategy para cálculo de frete flexível.
+## 🔹 Estrutura de Pastas e Classes
 
-🔹 Tecnologias
+Abaixo está a lista de pacotes e principais classes/interfaces/exceções presentes no projeto:
 
-Java 17 (ou superior)
-
-Maven/Gradle (opcional para gerenciamento de dependências)
-
-IDE recomendada: IntelliJ IDEA ou Eclipse
-
-🔹 Estrutura do Projeto
-src/
+```
+java/
 ├─ exercicio1/
-│  └─ Produto.java
+│  ├─ Main
+│  └─ Produto
 ├─ exercicio2/
-│  └─ ProdutoComDesconto.java
+│  ├─ Main
+│  └─ ProdutoComDesconto
 ├─ exercicio3/
-│  ├─ Funcionario.java
-│  ├─ Gerente.java
-│  └─ Desenvolvedor.java
+│  ├─ Desenvolvedor
+│  ├─ Funcionario
+│  └─ Main
 ├─ exercicio4/
-│  ├─ IMeioTransporte.java
-│  ├─ Carro.java
-│  ├─ Bicicleta.java
-│  └─ Trem.java
+│  ├─ Bicicleta
+│  ├─ Carro
+│  ├─ IMeioTransporte            # Interface
+│  ├─ Main
+│  └─ Trem
 ├─ exercicio5/
-│  ├─ FormaPagamento.java
-│  ├─ CartaoCredito.java
-│  ├─ Boleto.java
-│  └─ Pix.java
+│  ├─ Boleto
+│  ├─ CartaoCredito
+│  ├─ FormaPagamento             # Classe abstrata
+│  ├─ Main
+│  ├─ PagamentoInvalidoException # Exceção (destaque)
+│  └─ Pix
 ├─ exercicio6/
-│  ├─ Dinheiro.java
-│  ├─ Produto.java
-│  ├─ ItemCarrinho.java
-│  └─ Carrinho.java
+│  ├─ Carrinho
+│  ├─ Dinheiro
+│  ├─ ItemCarrinho
+│  └─ Main
 ├─ exercicio7/
-│  ├─ Identificavel.java
-│  ├─ IRepository.java
-│  └─ InMemoryRepository.java
-└─ exercicio8/
-├─ CalculadoraFrete.java
-├─ Sedex.java
-├─ PAC.java
-└─ RetiradaNaLoja.java
+│  ├─ EntidadeNaoEncontradaException # Exceção (destaque)
+│  ├─ Identificavel                  # Interface
+│  ├─ InMemoryRepository
+│  ├─ IRepository                    # Interface
+│  ├─ Main
+│  └─ Produto
+├─ exercicio8/
+│  ├─ CalculadoraFrete          # Interface
+│  ├─ CepInvalidoException      # Exceção (destaque)
+│  ├─ Main
+│  ├─ Pac
+│  ├─ Pedido
+│  ├─ RetiradaNaLoja
+│  └─ Sedex
+```
+**Legenda:**
+- _# Interface_: Indica uma interface.
+- _# Classe abstrata_: Indica uma classe abstrata.
+- _# Exceção (destaque)_: Indica uma exceção personalizada presente no projeto.
 
-🔹 Exercícios e Funcionalidades
-1. Encapsulamento
+---
 
-Classe Produto com atributos privados: nome, preco e quantidadeEmEstoque.
+## 🔹 Exercícios e Funcionalidades
 
-Validações: nome não nulo, preco e quantidadeEmEstoque ≥ 0.
+### 1. Encapsulamento
 
-2. Encapsulamento com Regras
+- Classe `Produto` com atributos privados: nome, preço e quantidadeEmEstoque.
+- Validações: nome não nulo, preco e quantidadeEmEstoque ≥ 0.
 
-Classe ProdutoComDesconto com método aplicarDesconto(double porcentagem).
+### 2. Encapsulamento com Regras
 
-Permite apenas descontos entre 0% e 50%.
+- Classe `ProdutoComDesconto` com método `aplicarDesconto(double porcentagem)`.
+- Permite apenas descontos entre 0% e 50%.
 
-3. Herança
+### 3. Herança
 
-Classe base Funcionario com subclasses Gerente e Desenvolvedor.
+- Classe base `Funcionario` com subclasses (exemplo: `Desenvolvedor`).
+- Método `calcularBonus()` sobrescrito para cada função.
 
-Método calcularBonus() sobrescrito para cada função.
+### 4. Polimorfismo
 
-4. Polimorfismo
+- Interface `IMeioTransporte` implementada por `Carro`, `Bicicleta` e `Trem`.
+- Métodos `acelerar()` e `frear()` com lógica própria.
 
-Interface IMeioTransporte implementada por Carro, Bicicleta e Trem.
+### 5. Abstração
 
-Métodos acelerar() e frear() com lógica própria.
+- Classe abstrata `FormaPagamento` com métodos `validarPagamento()` e `processarPagamento()`.
+- Implementações: `CartaoCredito`, `Boleto` e `Pix` com validações específicas.
 
-5. Abstração
+### 6. Imutabilidade
 
-Classe abstrata FormaPagamento com métodos validarPagamento() e processarPagamento().
+- Objeto de valor `Dinheiro` imutável.
+- `Carrinho` retorna novas instâncias ao adicionar/remover itens ou aplicar cupons.
+- Limite de cupons: 30%, arredondamento bancário.
 
-Implementações: CartaoCredito, Boleto e Pix com validações específicas.
+### 7. Generics
 
-6. Imutabilidade
+- Interface `Identificavel` com `getId()`.
+- Repositório genérico `IRepository<T, ID>` e implementação `InMemoryRepository`.
+- Garantia de imutabilidade ao listar entidades e tratamento de exceções.
 
-Objeto de valor Dinheiro imutável.
+### 8. Padrão Strategy
 
-Carrinho retorna novas instâncias ao adicionar/remover itens ou aplicar cupons.
+- Estratégia de frete via interface funcional `CalculadoraFrete`.
+- Implementações: `Sedex`, `Pac`, `RetiradaNaLoja`.
+- Suporte a estratégias promocionais via lambda, validação de CEP/região.
 
-Limite de cupons: 30%, arredondamento bancário.
+---
 
-7. Generics
+## 🔹 Como Executar
 
-Interface Identificavel com getId().
+1. **Clone o repositório:**
+   ```sh
+   git clone <url-do-repositorio>
+   ```
+2. **Compile o projeto:**
+   ```sh
+   javac -d bin src/**/*.java
+   ```
+3. **Execute as classes Main de cada exercício ou teste unitário:**
+   ```sh
+   java -cp bin exercicio1.Main
+   ```
 
-Repositório genérico IRepository<T, ID> e implementação InMemoryRepository.
+---
 
-Garantia de imutabilidade ao listar entidades e tratamento de exceções.
+## 🔹 Demonstrações
 
-8. Padrão Strategy
+- Criação de produtos e aplicação de descontos.
+- Cálculo de bônus de diferentes funcionários em uma lista.
+- Uso de meios de transporte com aceleração e frenagem polimórficas.
+- Processamento de pagamentos com validações.
+- Manipulação de carrinhos imutáveis com cupons.
+- Armazenamento de entidades genéricas em memória e busca por ID.
+- Troca dinâmica de estratégia de frete com validação de CEP.
 
-Estratégia de frete via interface funcional CalculadoraFrete.
+---
 
-Implementações: Sedex, PAC, RetiradaNaLoja.
+## 🔹 Observações
 
-Suporte a estratégias promocionais via lambda, com validação de CEP/região.
+- Todas as exceções lançadas (`IllegalArgumentException`, `PagamentoInvalidoException`, `EntidadeNaoEncontradaException`, etc.) são tratadas para demonstrar regras de negócio.
+- Projeto desenvolvido para estudo de POO, clean code e boas práticas de design em Java.
 
-🔹 Como Executar
-
-Clone o repositório:
-
-git clone <url-do-repositorio>
-
-
-Compile o projeto:
-
-javac -d bin src/**/*.java
-
-
-Execute as classes Main de cada exercício ou teste unitário correspondente:
-
-java -cp bin exercicio1.Main
-
-🔹 Demonstrações
-
-Criação de produtos e aplicação de descontos.
-
-Cálculo de bônus de diferentes funcionários em uma lista.
-
-Uso de meios de transporte com aceleração e frenagem polimórficas.
-
-Processamento de pagamentos com validações.
-
-Manipulação de carrinhos imutáveis com cupons.
-
-Armazenamento de entidades genéricas em memória e busca por ID.
-
-Troca dinâmica de estratégia de frete com validação de CEP.
-
-🔹 Observações
-
-Todas as exceções lançadas (IllegalArgumentException, PagamentoInvalidoException, EntidadeNaoEncontradaException) são tratadas para demonstrar regras de negócio.
-
-Projeto pensado para estudo de POO, clean code e boas práticas de design em Java.
+---
